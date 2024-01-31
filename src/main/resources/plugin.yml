@@ -1,3 +1,12 @@
 name: MintHygge
 version: '${project.version}'
-main: dk.shadow..minthygge.MintHygge
+main: dk.shadow.minthygge.MintHygge
+author: Shadow
+description: MintHygge
+commands:
+  hygge:
+    permission: "*"
+    description: MintHygge
+    usage: /<command>
+    aliases: [mh]
+

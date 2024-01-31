@@ -1,2 +1,24 @@
-package dk.shadow.minthygge.commands;public class CommandManager {
+package dk.shadow.minthygge.commands;
+
+import dk.shadow.minthygge.commands.ingamecommands.hygge.HyggeCommand;
+import dk.shadow.minthygge.utils.ColorUtils;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class CommandManager {
+    public static void initialise(JavaPlugin instance) {
+        HyggeCommand casinoCommand = new HyggeCommand(instance, "hygge");
+
+        try {
+            Bukkit.getPluginCommand("bande").setExecutor(casinoCommand);
+
+            //Bukkit.getPluginCommand("bande").setTabCompleter(new TabCompleteListener(casinoCommand));
+
+            Bukkit.getConsoleSender().sendMessage(ColorUtils.getColored("   &a - Successful enabled commands"));
+        } catch (Exception e) {
+            Bukkit.getConsoleSender().sendMessage(ColorUtils.getColored("   &c - Could not enable commands"));
+        }
+
+
+    }
 }
