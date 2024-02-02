@@ -1,12 +1,9 @@
-package dk.shadow.minthygge.commands.ingamecommands.hygge.subs;
+package dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs;
 
-import dk.shadow.minthygge.commands.ISubCommand;
-import org.apache.commons.lang.StringUtils;
+import dk.shadowerlort.minthygge.commands.ISubCommand;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.util.StringUtil;
 import org.bukkit.util.Vector;
 
 public class PushSub extends ISubCommand {
@@ -30,12 +27,15 @@ public class PushSub extends ISubCommand {
         }
 
         if(args[0].equalsIgnoreCase("down")) {
-            Vector vector = new Vector(0, player.getLocation().getDirection().getY(), 0);
-
-            vector.multiply(15);
-            player.setVelocity(vector);
-
+            double speed = 2;
+            pushEntity(player, speed);
             return;
         }
+    }
+
+    private void pushEntity(Entity entity, double speed) {
+        Vector currentVelocity = entity.getVelocity();
+        currentVelocity.setY(-speed);
+        entity.setVelocity(currentVelocity);
     }
 }

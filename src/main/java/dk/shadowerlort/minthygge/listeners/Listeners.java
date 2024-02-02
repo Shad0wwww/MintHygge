@@ -1,8 +1,8 @@
-package dk.shadow.minthygge.listeners;
+package dk.shadowerlort.minthygge.listeners;
 
-import dk.shadow.minthygge.listeners.spigot.DeathEvent;
-import dk.shadow.minthygge.listeners.spigot.InteractEvent;
-import dk.shadow.minthygge.utils.ColorUtils;
+import dk.shadowerlort.minthygge.listeners.spigot.DeathEvent;
+import dk.shadowerlort.minthygge.listeners.spigot.InteractEvent;
+import dk.shadowerlort.minthygge.utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;

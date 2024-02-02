@@ -1,4 +1,4 @@
-package dk.shadow.minthygge.utils;
+package dk.shadowerlort.minthygge.utils;
 
 import net.md_5.bungee.api.ChatColor;
 

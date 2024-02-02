@@ -1,4 +1,4 @@
-package dk.shadow.minthygge.listeners.spigot;
+package dk.shadowerlort.minthygge.listeners.spigot;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

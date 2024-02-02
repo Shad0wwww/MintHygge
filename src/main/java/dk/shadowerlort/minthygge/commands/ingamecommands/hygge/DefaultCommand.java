@@ -1,8 +1,7 @@
-package dk.shadow.minthygge.commands.ingamecommands.hygge;
+package dk.shadowerlort.minthygge.commands.ingamecommands.hygge;
 
-import dk.shadow.minthygge.commands.ISubCommand;
-import dk.shadow.minthygge.utils.ColorUtils;
-import org.bukkit.Bukkit;
+import dk.shadowerlort.minthygge.commands.ISubCommand;
+import dk.shadowerlort.minthygge.utils.ColorUtils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

@@ -1,6 +1,6 @@
 name: MintHygge
 version: '${project.version}'
-main: dk.shadow.minthygge.MintHygge
+main: dk.shadowerlort.minthygge.MintHygge
 author: Shadow
 description: MintHygge
 commands:

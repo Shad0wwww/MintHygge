@@ -1,4 +1,4 @@
-package dk.shadow.minthygge.commands;
+package dk.shadowerlort.minthygge.commands;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,8 +1,8 @@
-package dk.shadow.minthygge;
+package dk.shadowerlort.minthygge;
 
-import dk.shadow.minthygge.commands.CommandManager;
-import dk.shadow.minthygge.listeners.Listeners;
-import dk.shadow.minthygge.utils.ColorUtils;
+import dk.shadowerlort.minthygge.commands.CommandManager;
+import dk.shadowerlort.minthygge.listeners.Listeners;
+import dk.shadowerlort.minthygge.utils.ColorUtils;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 

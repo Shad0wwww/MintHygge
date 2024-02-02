@@ -1,10 +1,11 @@
-package dk.shadow.minthygge.listeners.spigot;
+package dk.shadowerlort.minthygge.listeners.spigot;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -13,7 +14,7 @@ import org.bukkit.util.Vector;
 public class InteractEvent implements Listener {
 
     // PICK UP PLAYER
-    @EventHandler
+    @EventHandler (priority = EventPriority.HIGH)
     public void onPlayerInteractEvent(PlayerInteractAtEntityEvent event) {
         Player player = event.getPlayer();
         if (player.isOp()) {
@@ -27,7 +28,7 @@ public class InteractEvent implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler (priority = EventPriority.HIGH)
     public void onPlayerInteractEvent(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         Player passenger = (Player) player.getPassenger();

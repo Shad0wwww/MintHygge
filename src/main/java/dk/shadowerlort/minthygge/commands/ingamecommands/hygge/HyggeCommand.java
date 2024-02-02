@@ -1,11 +1,12 @@
-package dk.shadow.minthygge.commands.ingamecommands.hygge;
+package dk.shadowerlort.minthygge.commands.ingamecommands.hygge;
 
-import dk.shadow.minthygge.commands.ICommand;
-import dk.shadow.minthygge.commands.ISubCommand;
-import dk.shadow.minthygge.commands.ingamecommands.hygge.subs.InventoryDropSub;
-import dk.shadow.minthygge.commands.ingamecommands.hygge.subs.PushSub;
+import dk.shadowerlort.minthygge.commands.ICommand;
+import dk.shadowerlort.minthygge.commands.ISubCommand;
+import dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs.InventoryDropSub;
+import dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs.PushSub;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HyggeCommand extends ICommand {
@@ -27,6 +28,11 @@ public class HyggeCommand extends ICommand {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        Player player2 = (Player) sender;
+        if(!player2.isOp()) {
+            return false;
+        }
+
         try {
             if (args.length == 0 && getDefaultCommand() != null) {
                 execute(sender, getDefaultCommand(), args);

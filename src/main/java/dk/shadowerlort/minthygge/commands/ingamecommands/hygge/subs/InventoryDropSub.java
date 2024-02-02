@@ -1,14 +1,10 @@
-package dk.shadow.minthygge.commands.ingamecommands.hygge.subs;
+package dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs;
 
-import dk.shadow.minthygge.MintHygge;
-import dk.shadow.minthygge.commands.ISubCommand;
-import org.apache.commons.lang.StringUtils;
+import dk.shadowerlort.minthygge.MintHygge;
+import dk.shadowerlort.minthygge.commands.ISubCommand;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
-
-import java.util.Objects;
 
 public class InventoryDropSub extends ISubCommand {
     public InventoryDropSub() {

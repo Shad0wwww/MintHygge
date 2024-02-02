@@ -1,7 +1,7 @@
-package dk.shadow.minthygge.commands;
+package dk.shadowerlort.minthygge.commands;
 
-import dk.shadow.minthygge.commands.ingamecommands.hygge.HyggeCommand;
-import dk.shadow.minthygge.utils.ColorUtils;
+import dk.shadowerlort.minthygge.commands.ingamecommands.hygge.HyggeCommand;
+import dk.shadowerlort.minthygge.utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
