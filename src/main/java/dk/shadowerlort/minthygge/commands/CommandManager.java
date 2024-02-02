@@ -10,7 +10,7 @@ public class CommandManager {
         HyggeCommand casinoCommand = new HyggeCommand(instance, "hygge");
 
         try {
-            Bukkit.getPluginCommand("bande").setExecutor(casinoCommand);
+            Bukkit.getPluginCommand("hygge").setExecutor(casinoCommand);
 
             //Bukkit.getPluginCommand("bande").setTabCompleter(new TabCompleteListener(casinoCommand));
 
