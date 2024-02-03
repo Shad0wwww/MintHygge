@@ -18,7 +18,8 @@ public class DefaultCommand extends ISubCommand {
         player.sendMessage(ColorUtils.getColored(
                 "&8&l[ &3&lMINTHYGGE &8&l]",
                 "&7&l- &f/hygge inventorydrop &7<true/false>",
-                "&7&l- &f/hygge push &7<player>"
+                "&7&l- &f/hygge push &7<player>",
+                "&7&l- &f/hygge removeArrow &7[player]"
         ));
 
     }

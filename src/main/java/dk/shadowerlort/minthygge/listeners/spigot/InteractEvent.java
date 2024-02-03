@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
@@ -36,7 +37,15 @@ public class InteractEvent implements Listener {
             return;
         }
 
-        if (!player.getPassenger().isEmpty()) {
+        if (player.getPassenger() == null) {
+            return;
+        }
+
+        if (!event.getAction().equals(Action.LEFT_CLICK_AIR) && !event.getAction().equals(Action.LEFT_CLICK_BLOCK)) {
+            return;
+        }
+
+        if (!player.isSneaking()) {
             return;
         }
 
