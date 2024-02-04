@@ -19,7 +19,9 @@ public class DefaultCommand extends ISubCommand {
                 "&8&l[ &3&lMINTHYGGE &8&l]",
                 "&7&l- &f/hygge inventorydrop &7<true/false>",
                 "&7&l- &f/hygge push &7<player>",
-                "&7&l- &f/hygge removeArrow &7[player]"
+                "&7&l- &f/hygge removeArrow &7[player]",
+                "&7&l- &f/hygge noKB",
+                "&7&l- &f/hygge invis"
         ));
 
     }

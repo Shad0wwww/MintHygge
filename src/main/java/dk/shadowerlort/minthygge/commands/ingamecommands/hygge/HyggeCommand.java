@@ -2,9 +2,7 @@ package dk.shadowerlort.minthygge.commands.ingamecommands.hygge;
 
 import dk.shadowerlort.minthygge.commands.ICommand;
 import dk.shadowerlort.minthygge.commands.ISubCommand;
-import dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs.InventoryDropSub;
-import dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs.PushSub;
-import dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs.RemoveArrowSub;
+import dk.shadowerlort.minthygge.commands.ingamecommands.hygge.subs.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -19,7 +17,9 @@ public class HyggeCommand extends ICommand {
         addSubCommands(
             new InventoryDropSub(),
             new PushSub(),
-            new RemoveArrowSub()
+            new RemoveArrowSub(),
+            new NoKB(),
+            new InvisSub()
         );
     }
 

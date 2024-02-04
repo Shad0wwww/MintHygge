@@ -1,5 +1,6 @@
 package dk.shadowerlort.minthygge.listeners;
 
+import dk.shadowerlort.minthygge.listeners.spigot.DamageEvent;
 import dk.shadowerlort.minthygge.listeners.spigot.DeathEvent;
 import dk.shadowerlort.minthygge.listeners.spigot.InteractEvent;
 import dk.shadowerlort.minthygge.utils.ColorUtils;
@@ -14,7 +15,7 @@ public class Listeners {
         plugin = paramPlugin;
         register(new InteractEvent(), "PlayerInteractEvent");
         register(new DeathEvent(), "PlayerDeathEvent");
-
+        register(new DamageEvent(), "EntityDamageEvent");
     }
 
     private static void register(Listener listener, String name) {
