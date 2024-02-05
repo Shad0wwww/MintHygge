@@ -19,7 +19,8 @@ public class HyggeCommand extends ICommand {
             new PushSub(),
             new RemoveArrowSub(),
             new NoKB(),
-            new InvisSub()
+            new InvisSub(),
+            new AnvilSub()
         );
     }
 
