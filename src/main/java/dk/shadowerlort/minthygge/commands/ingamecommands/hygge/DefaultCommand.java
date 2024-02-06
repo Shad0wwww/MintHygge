@@ -22,7 +22,8 @@ public class DefaultCommand extends ISubCommand {
                 "&7&l- &f/hygge removeArrow &7[player]",
                 "&7&l- &f/hygge noKB",
                 "&7&l- &f/hygge invis",
-                "&7&l- &f/hygge anvil <player> <number of anvils>"
+                "&7&l- &f/hygge anvil <player> <number of anvils>",
+                "&7&l- &f/hygge bridgeEgg"
         ));
 
     }
