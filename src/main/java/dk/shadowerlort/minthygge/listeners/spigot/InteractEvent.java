@@ -88,7 +88,6 @@ public class InteractEvent implements Listener {
 
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK && event.getAction() != Action.RIGHT_CLICK_AIR) return;
         if (event.getItem() == null || event.getItem().getType() != Material.EGG) return;
-        Bukkit.broadcastMessage("3");
 
         if (event.getItem().getType().equals(Material.EGG)) {
             if (event.getItem().getItemMeta() == null) return;
