@@ -1,10 +1,15 @@
 package dk.shadowerlort.minthygge.listeners.spigot;
 
+import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
+import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import dk.shadowerlort.minthygge.MintHygge;
+import dk.shadowerlort.minthygge.utils.WorldGuard;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.Sign;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -18,9 +23,42 @@ import org.bukkit.util.Vector;
 
 import java.util.*;
 
+import static dk.shadowerlort.minthygge.utils.WorldGuard.getWorldGuard;
+
 public class InteractEvent implements Listener {
 
     // PICK UP PLAYER
+
+    @EventHandler (priority = EventPriority.HIGHEST)
+    public void SignInteract(PlayerInteractEvent event) {
+        if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
+        if (event.getClickedBlock().getType() != Material.WALL_SIGN) return;
+
+        Sign sign = (Sign) event.getClickedBlock().getState();
+
+        if (sign.getLine(0).equals("§4§lSOLGT!")) {
+            if (ChatColor.stripColor(sign.getLine(1)).equals(event.getPlayer().getName())) {
+                String cellRegion = ChatColor.stripColor(sign.getLine(2)).toLowerCase();
+
+                WorldGuardPlugin worldGuard = getWorldGuard();
+                if (worldGuard == null) return;
+                if (worldGuard.getRegionManager(event.getPlayer().getWorld()).getRegion(cellRegion) == null) return;
+
+                ProtectedRegion region = worldGuard.getRegionManager(event.getPlayer().getWorld()).getRegion(cellRegion);
+                assert region != null;
+
+                if (region.getMembers().contains(event.getPlayer().getName())) {
+                    return;
+                }
+
+                event.getPlayer().sendMessage("§aDu burde gerne kunne åbne din celle igen. Hvis ikke, kontakt en staff.");
+                event.getPlayer().sendMessage("§aHusk også at fjerne og tilføje dine medlemmer igen, hvis de skal have adgang.");
+                region.getMembers().addPlayer(event.getPlayer().getName());
+                event.setCancelled(true);
+            }
+        }
+    }
+
     @EventHandler (priority = EventPriority.HIGH)
     public void onPlayerInteractEvent(PlayerInteractAtEntityEvent event) {
         Player player = event.getPlayer();
@@ -129,8 +167,15 @@ public class InteractEvent implements Listener {
 
                         for (int i = 0; i < WIDTH; i++) {
                             Location currentLocation = spawnLocation.clone().add(direction.clone().multiply(DISTANCE * i)).add(offset);
+                            if (currentLocation.getBlock().getType() != Material.AIR) {
+                                continue;
+                            }
+
                             if (currentLocation.distance(player.getLocation()) < 2) {
                                 Block blockInfrontOfPlayer = player.getWorld().getBlockAt(player.getLocation().add(player.getLocation().getDirection().multiply(1)));
+                                if (blockInfrontOfPlayer.getType() != Material.AIR) {
+                                    continue;
+                                }
                                 blockInfrontOfPlayer.setType(Material.WOOL);
                                 bridgeBlocks.add(blockInfrontOfPlayer);
                                 continue;

@@ -16,6 +16,7 @@ public class Listeners {
         register(new InteractEvent(), "PlayerInteractEvent");
         register(new DeathEvent(), "PlayerDeathEvent");
         register(new DamageEvent(), "EntityDamageEvent");
+        register(new InteractEvent(), "PlayerInteractEvent");
     }
 
     private static void register(Listener listener, String name) {
