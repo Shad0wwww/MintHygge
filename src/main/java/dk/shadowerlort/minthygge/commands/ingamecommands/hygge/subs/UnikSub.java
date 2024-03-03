@@ -13,7 +13,7 @@ public class UnikSub extends ISubCommand {
     @Override
     public void onCommand(CommandSender sender, String[] args, String paramString) {
 
-        if (sender.hasPermission("unikpay.admin")) {
+        if (sender.hasPermission("unikpay.admin") || !sender.isOp()) {
             sender.sendMessage("§cDu har ikke tilladelse til at bruge denne kommando");
             return;
         }
