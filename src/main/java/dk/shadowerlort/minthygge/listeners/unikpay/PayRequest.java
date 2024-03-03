@@ -21,6 +21,8 @@ public class PayRequest implements Listener {
         if (!event.getSuccess()) {
             if (event.getMessage().trim().equalsIgnoreCase(Config.IKKELINKET_MESSAGE)) {
                 if (UserLinkHandler.hasUserLink(player)) {
+                    UserLink userLink = UserLinkHandler.getUserLink(player);
+                    userLink.addPackage(event.getName(), event.getAmount());
                     return;
                 }
 

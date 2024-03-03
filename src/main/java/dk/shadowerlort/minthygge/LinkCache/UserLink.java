@@ -9,13 +9,15 @@ import dk.shadowerlort.minthygge.MintHygge;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class UserLink {
     @Getter
     private Player player;
-    private final float amount;
-    private final String packageName;
+    public List<UnikpayPackage> unikpayPackages = new ArrayList<>();
     private final long startTime;
     private final long duration = 10 * 60 * 1000;
     private int taskId;
@@ -23,8 +25,11 @@ public class UserLink {
     public UserLink(Player player, float amount, String packageName) {
         this.startTime = System.currentTimeMillis();
         this.player = player;
-        this.amount = amount;
-        this.packageName = packageName;
+        unikpayPackages.add(new UnikpayPackage(packageName, amount));
+    }
+
+    public void addPackage(String packageName, float amount) {
+        unikpayPackages.add(new UnikpayPackage(packageName, amount));
     }
 
     public void startVerification() {
@@ -35,7 +40,9 @@ public class UserLink {
                  isVerified().thenAccept(result -> {
                      if (!result) return;
 
-                     Internal.sendPayRequest(player, packageName, amount);
+                     unikpayPackages.forEach(unikpayPackage -> {
+                         Internal.sendPayRequest(player, unikpayPackage.getPackageName(), unikpayPackage.getAmount());
+                     });
                  });
                  return;
              }
