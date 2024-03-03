@@ -3,6 +3,7 @@ package dk.shadowerlort.minthygge.listeners;
 import dk.shadowerlort.minthygge.listeners.spigot.DamageEvent;
 import dk.shadowerlort.minthygge.listeners.spigot.DeathEvent;
 import dk.shadowerlort.minthygge.listeners.spigot.InteractEvent;
+import dk.shadowerlort.minthygge.listeners.unikpay.PayRequest;
 import dk.shadowerlort.minthygge.utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
@@ -17,6 +18,7 @@ public class Listeners {
         register(new DeathEvent(), "PlayerDeathEvent");
         register(new DamageEvent(), "EntityDamageEvent");
         register(new InteractEvent(), "PlayerInteractEvent");
+        register(new PayRequest(), "OnPayRequest");
     }
 
     private static void register(Listener listener, String name) {

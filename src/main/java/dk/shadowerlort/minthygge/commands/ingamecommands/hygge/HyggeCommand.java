@@ -21,7 +21,8 @@ public class HyggeCommand extends ICommand {
             new NoKB(),
             new InvisSub(),
             new AnvilSub(),
-            new BridgeEggSub()
+            new BridgeEggSub(),
+            new UnikSub()
         );
     }
 
