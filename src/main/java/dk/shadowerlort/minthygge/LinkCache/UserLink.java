@@ -54,7 +54,6 @@ public class UserLink {
         String url = "https://unikpay.manaxi.dk/v1/verify/isVerified/" + player.getUniqueId();
         CompletableFuture<Boolean> completableFuture = new CompletableFuture<>();
 
-        Bukkit.broadcastMessage("Trying to verify");
         Bukkit.getScheduler().runTaskAsynchronously(Main.getInstance(), () -> {
             String svar = HttpsClient.getRequest(url, Main.getAPIKEY());
             JsonObject response = (JsonObject)(new Gson()).fromJson(svar, JsonObject.class);
