@@ -19,7 +19,7 @@ public class UserLink {
     private Player player;
     public List<UnikpayPackage> unikpayPackages = new ArrayList<>();
     private final long startTime;
-    private final long duration = 10 * 60 * 1000;
+    private final long duration = 10 * 60 * 1000; // 10 minutes
     private int taskId;
 
     public UserLink(Player player, float amount, String packageName) {

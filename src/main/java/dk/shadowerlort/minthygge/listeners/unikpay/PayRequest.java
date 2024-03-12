@@ -48,7 +48,6 @@ public class PayRequest implements Listener {
             UserLinkHandler.removeUserLink(player);
         }
 
-        player.sendMessage("§7");
         player.sendMessage("§8[ §6§lPAY §f§lSYSTEM §8] §fDu vandt en konkurrence, og fik §2" + event.getAmount() + " §aEmeralder§f på Unikpay!");
     }
 }
